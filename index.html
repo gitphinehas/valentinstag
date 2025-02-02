@@ -119,23 +119,38 @@
             const heartContainer = document.createElement("div");
             heartContainer.classList.add("heart-container");
             document.body.appendChild(heartContainer);
-    
+        
             function createHeart() {
                 const heart = document.createElement("div");
                 heart.classList.add("heart");
-                heart.innerHTML = "❤️"; 
+                heart.innerHTML = "💝"; 
                 heart.style.left = Math.random() * 100 + "vw";
                 heart.style.animationDuration = Math.random() * 3 + 2 + "s";
                 heartContainer.appendChild(heart);
-    
+        
                 setTimeout(() => {
                     heart.remove();
-                }, 5000); 
+                }, 10000); 
             }
-    
-            setInterval(createHeart, 400);
+        
+            function createBouquet() {
+                const bouquet = document.createElement("div");
+                bouquet.classList.add("heart");
+                bouquet.innerHTML = "💐";
+                bouquet.style.left = Math.random() * 100 + "vw";
+                bouquet.style.animationDuration = Math.random() * 3 + 2 + "s";
+                heartContainer.appendChild(bouquet);
+        
+                setTimeout(() => {
+                    bouquet.remove();
+                }, 10000); 
+            }
+        
+            setInterval(createHeart, 500);
+            setInterval(createBouquet, 500);
         });
-    </script>
+        </script>
+        
     
 
 </body>
