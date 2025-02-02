@@ -125,12 +125,12 @@
                 heart.classList.add("heart");
                 heart.innerHTML = "💝"; 
                 heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+                heart.style.animationDuration = Math.random() * 4 + 3 + "s";
                 heartContainer.appendChild(heart);
         
                 setTimeout(() => {
                     heart.remove();
-                }, 10000); 
+                }, 5000); 
             }
         
             function createBouquet() {
@@ -138,16 +138,16 @@
                 bouquet.classList.add("heart");
                 bouquet.innerHTML = "💐";
                 bouquet.style.left = Math.random() * 100 + "vw";
-                bouquet.style.animationDuration = Math.random() * 3 + 2 + "s";
+                bouquet.style.animationDuration = Math.random() * 4 + 3 + "s";
                 heartContainer.appendChild(bouquet);
         
                 setTimeout(() => {
                     bouquet.remove();
-                }, 10000); 
+                }, 5000); 
             }
         
-            setInterval(createHeart, 500);
-            setInterval(createBouquet, 500);
+            setInterval(createHeart, 1000);
+            setInterval(createBouquet, 1000);
         });
         </script>
         
