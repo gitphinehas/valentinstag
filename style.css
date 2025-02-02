@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ffccdd;
+    background: linear-gradient(135deg, #ffccdd, #ff99aa);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,16 +11,16 @@ body {
 .container {
     background: white;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
     width: 90%;
     max-width: 500px;
     margin: auto;
     margin-left: 2ex;
     margin-right: 2ex;
-    opacity: 0;  /* Standardmäßig unsichtbar */
-    animation: fadeIn 2s forwards; /* Fade-In-Animation */
+    opacity: 0;
+    animation: fadeIn 2s forwards;
 }
 
 .hidden {
@@ -28,31 +28,47 @@ body {
 }
 
 .image {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    transition: transform 0.3s;
+}
+
+.image:nth-child(even) {
+    transform: rotate(-3deg);
+}
+
+.image:nth-child(odd) {
+    transform: rotate(3deg);
+}
+
+.image:hover {
+    transform: rotate(0deg) scale(1.05);
 }
 
 .btn {
     background-color: rgb(255, 102, 153);
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 20px;
+    padding: 12px 24px;
+    margin: 10px auto;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     width: auto;
-    height: 45px;
-    justify-content: center;
-    align-items: center;
+    height: 50px;
+    display: block;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
     background-color: #ff3366;
+    transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -81,7 +97,7 @@ body {
 
     .btn {
         font-size: 14px;
-        padding: 8px 16px;
+        padding: 10px 20px;
         height: auto;
         width: auto;
     }
