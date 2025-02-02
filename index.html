@@ -96,6 +96,7 @@
         <button class="btn" onclick="showPage(2)">Nagut, doch! 🤔</button>
     </div>
     
+    
     <script>
         function showPage(pageNumber) {
             document.querySelectorAll('.container').forEach(page => {
@@ -104,5 +105,29 @@
             document.getElementById('page' + pageNumber).classList.remove('hidden');
         }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const heartContainer = document.createElement("div");
+            heartContainer.classList.add("heart-container");
+            document.body.appendChild(heartContainer);
+    
+            function createHeart() {
+                const heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.innerHTML = "❤️"; 
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 4 + 2 + "s";
+                heartContainer.appendChild(heart);
+    
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000); 
+            }
+    
+            setInterval(createHeart, 250);
+        });
+    </script>
+    
+
 </body>
 </html>
