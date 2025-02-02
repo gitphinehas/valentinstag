@@ -4,8 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 5ex;
+    min-height: 100vh;
+    margin: 2ex 0;
 }
 
 .container {
@@ -14,8 +14,9 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
 }
 
 .hidden {
@@ -23,7 +24,7 @@ body {
 }
 
 .image {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
 }
@@ -38,22 +39,27 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-    width: 100%;
-    max-width: 200px;
+    width: auto;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .btn:hover {
     background-color: #ff3366;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .container {
-        width: 90%;
+        width: 95%;
         padding: 15px;
     }
 
     .btn {
         font-size: 14px;
         padding: 8px 16px;
+        height: auto;
+        width: auto;
     }
 }

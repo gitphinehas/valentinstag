@@ -13,7 +13,7 @@
             richtig zu fragen, weil nie der richtige Moment war und wir 
             kaum beieinander. Deswegen habe ich mir das hier überlegt.
         </p>
-        <img src="bild.jpg" alt="Unser Bild" class="image">
+        <img src="pictures/strand.JPEG" alt="Unser Bild" class="image">
         <p>Um weiterzukommen musst du aber zuerst zugeben, dass ich dich mehr liebe, als du mich! 😘</p>
         <button class="btn" onclick="showPage(2)">Ja okay, du liebst mich mehr. Yippie! 💕</button>
         <button class="btn" onclick="showPage(3)">Neini! Niemals! Ich liebe dich viel mehr! </button>
@@ -22,61 +22,81 @@
     <div class="container hidden" id="page2">
         <h1>Okay, Yippie! </h1>
             
-        <h2>Bist du wirklich sicher, dass du weiter machen möchtest? 🤔</h2>
+        <h2>Bist du wirklich sicher, dass du weitermachen möchtest? 🤔</h2>
         <p>Das ist eine sehr wichtige Frage.</p>
-        <button class="btn" onclick="showPage(8)">Nein, lieber doch nicht...</button>
+        <button class="btn" onclick="showPage(9)">Nein, lieber doch nicht...</button>
         <button class="btn" onclick="showPage(4)">Ja, auf jeden Fall! 💕</button>
     </div>
 
     <div class="container hidden" id="page3">
         <h1>💕 Leider falsch! 💕</h1>
-        <img src="bild.jpg" alt="Lachendes Bild" class="image">
+        <img src="pictures/flugzeug.JPG" alt="Lachendes Bild" class="image">
         <p>Du musst schon zugeben, dass ich dich mehr liebe! Dummi 😊</p>
         <button class="btn" onclick="showPage(1)">Nochmal versuchen 🔄</button>
     </div>
 
     <div class="container hidden" id="page4">
         <h1>Mein kleiner Schatz</h1>
-        <img src="bild.jpg" alt="Unser Bild" class="image">
+        <br>
+        <img src="pictures/flughafen.JPEG" alt="Unser Bild" class="image">
         <button class="btn" onclick="showPage(6)">Ja...? 🤔</button>
     </div>
 
     <div class="container hidden" id="page5">
         <h1>Willst du wirklich nein sagen? 😢</h1>
-        <img src="bild.jpg" alt="Trauriges Bild" class="image">
+        <img src="pictures/traurig.JPG" alt="Trauriges Bild" class="image">
         <p>Bist du dir sicher?</p>
-        <button class="btn" onclick="showPage(4)">Doch, natürlich! 🥰</button>
+        <button class="btn" onclick="showPage(8)">Doch, natürlich! 🥰</button>
         <button class="btn">Nein!! 😭</button>
     </div>
 
     <div class="container hidden" id="page6">
         <h1>Mein Ein und Alles</h1>
-        <img src="bild.jpg" alt="Unser Bild" class="image">
-        <button class="btn" onclick="showPage(7)">Ja...? 🤔</button>
+        <br>
+        <img src="pictures/tauchen.JPEG" alt="Unser Bild" class="image">
+        <button class="btn" onclick="showPage(7)">Das bin ich! 🤔</button>
     </div>
-
+    
     <div class="container hidden" id="page7">
-        <h1>Willst du mein Valentinsschatz sein? 💖</h1>
-        <img src="bild.jpg" alt="Unser Bild" class="image">
-        <p>Ich bin so froh, dich zu haben! Du machst jeden Tag besonders. 💕</p>
-        <button class="btn" onclick="showPage(5)">Vielleicht 🤔</button>
-        <button class="btn" onclick="showConfirmation()">Ja, natürlich! 😊</button>
+        <h1>Bist du bereit?</h1>
+        <br>
+        <img src="pictures/motorrad.JPG" alt="Unser Bild" class="image">
+        <button class="btn" onclick="showPage(8)">JAAA!</button>
     </div>
 
     <div class="container hidden" id="page8">
-        <img src="bild.jpg" alt="trauriges Bild" class="image">
+        <h1>Willst du mein Valentinsschatz sein? 💖</h1>
+        <img src="pictures/Wir.JPEG" alt="Unser Bild" class="image">
+        <p>Ich bin so froh, dich zu haben! Du machst jeden Tag besonders. 💕</p>
+        <button class="btn" onclick="showPage(5)">Vielleicht 🤔</button>
+        <button class="btn" onclick="showPage(10)">Ja, natürlich! 😊</button>
+    </div>
+
+    <div class="container hidden" id="page10">
+        <h1>💖 Yippie! Yippie! Yippie! 💖</h1>
+        <img src="pictures/katze.JPG" alt="Unser Bild" class="image">
+        <p>Ich bin so froh, dich zu haben! Ich liebe dich über alles und 
+        kann unseren gemeinsamen Valentinstag kaum erwarten! 💕
+        </p>
+        <p>Gleich danach fahren wir in unseren zweiten gemeinsamen Urlaub!
+            Mit jedem Tag liebe ich dich mehr mein Engel 💖. 
+            Ich bin so glücklich, dich zu haben!
+        </p>
+    </div>
+
+    <div class="container hidden" id="page9">
+        <h1>Bitte 🥰</h1>
+        <img src="pictures/fuß.JPG" alt="trauriges Bild" class="image">
         <br>
         <button class="btn" onclick="showPage(2)">Nagut, doch! 🤔</button>
+    </div>
+    
     <script>
         function showPage(pageNumber) {
             document.querySelectorAll('.container').forEach(page => {
                 page.classList.add('hidden');
             });
             document.getElementById('page' + pageNumber).classList.remove('hidden');
-        }
-
-        function showConfirmation() {
-            alert("Juhu! Ich freue mich riesig! 🥰");
         }
     </script>
 </body>
