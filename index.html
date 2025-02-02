@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willst du mein Valentinsschatz sein?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Willst du mein Valentinsschatz sein? 💖</h1>
+        <img src="bild.jpg" alt="Unser Bild" class="image">
+        <p>Ich bin so froh, dich zu haben! Du machst jeden Tag besonders. 💕</p>
+        <button class="btn" onclick="showConfirmation()">Ja, natürlich! 😊</button>
+        <p id="confirmation" class="hidden">Juhu! Ich freue mich riesig! 🥰</p>
+    </div>
+    <script>
+        function showConfirmation() {
+            document.getElementById('confirmation').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
