@@ -24,7 +24,7 @@
     </div>
 
     <div class="container hidden" id="page2">
-        <h1>Okay, Yippie! </h1>
+        <h1>Yippie! </h1>
             
         <h2>Bist du wirklich sicher, dass du weitermachen möchtest? 🤔</h2>
         <p>Das ist eine sehr wichtige Frage.</p>
@@ -99,12 +99,21 @@
     
     <script>
         function showPage(pageNumber) {
-            document.querySelectorAll('.container').forEach(page => {
-                page.classList.add('hidden');
-            });
-            document.getElementById('page' + pageNumber).classList.remove('hidden');
+            const currentPage = document.querySelector('.container:not(.hidden)');
+           
+            currentPage.classList.add('fade-out');
+
+            currentPage.addEventListener('animationend', function () {
+                currentPage.classList.add('hidden');
+                
+                currentPage.classList.remove('fade-out');
+                
+                const newPage = document.getElementById('page' + pageNumber);
+                newPage.classList.remove('hidden');
+            }, { once: true }); 
         }
     </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const heartContainer = document.createElement("div");

@@ -51,7 +51,7 @@ body {
     margin-left: 2ex;
     margin-right: 2ex;
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 0.5s forwards;
 }
 
 .hidden {
@@ -125,6 +125,10 @@ a.btn {
 a.btn:hover {
     background-color: #ff3366;
     transform: scale(1.05);
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
 }
 
 
