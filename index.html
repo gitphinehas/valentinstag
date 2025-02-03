@@ -25,7 +25,6 @@
 
     <div class="container hidden" id="page2">
         <h1>Yippie! </h1>
-            
         <h2>Bist du wirklich sicher, dass du weitermachen möchtest? 🤔</h2>
         <p>Das ist eine sehr wichtige Frage.</p>
         <button class="btn" onclick="showPage(4)">Ja, auf jeden Fall! 💕</button>
@@ -83,7 +82,7 @@
         kann unseren gemeinsamen Valentinstag kaum erwarten! 💕
         </p>
         <p>Gleich danach fahren wir in unseren zweiten gemeinsamen Urlaub!
-            Mit jedem Tag liebe ich dich mehr mein Engel 💖
+            Mit jedem Tag liebe ich dich mehr, mein Engel 💖
             Du machst mich so unglaublich glücklich.
         </p>
         <a href="pictures/Valentinstag-1.png" download="valentinstag.png" class="btn">Klicke hier, um zu bestätigen!</a>
@@ -96,24 +95,39 @@
         <button class="btn" onclick="showPage(2)">Nagut, doch! 🤔</button>
     </div>
     
+    <!-- Audio-Element initialisieren -->
+    <script>
+        // Audio-Element global definieren
+        const valentineAudio = new Audio('/pictures/yippie.mp3');
+        valentineAudio.loop = true;
+    </script>
     
+    <!-- Script für Seitenwechsel und Audio-Steuerung -->
     <script>
         function showPage(pageNumber) {
             const currentPage = document.querySelector('.container:not(.hidden)');
-           
+            
+            // Starte das Audio, wenn Seite 10 angezeigt wird, ansonsten stoppe es.
+            if (pageNumber === 10) {
+                valentineAudio.play();
+            } else {
+                valentineAudio.pause();
+                valentineAudio.currentTime = 0;
+            }
+            
             currentPage.classList.add('fade-out');
-
+    
             currentPage.addEventListener('animationend', function () {
                 currentPage.classList.add('hidden');
-                
                 currentPage.classList.remove('fade-out');
-                
+    
                 const newPage = document.getElementById('page' + pageNumber);
                 newPage.classList.remove('hidden');
-            }, { once: true }); 
+            }, { once: true });
         }
     </script>
     
+    <!-- Script für animierte Emojis -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const heartContainer = document.createElement("div");
@@ -149,9 +163,6 @@
             setInterval(createHeart, 1000);
             setInterval(createBouquet, 1000);
         });
-        </script>
-        
-    
-
+    </script>
 </body>
 </html>
