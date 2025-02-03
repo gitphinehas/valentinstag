@@ -73,7 +73,7 @@
         <h1>Will you be my valentine? 💖</h1>
         <img src="pictures/Wir.JPEG" alt="Unser Bild" class="image">
         <p>Ich würde mich so riesig freuen, wenn du den Valentinstag mit mir verbringen möchtest!</p>
-        <button class="btn" onclick="showPage(10)">Ja, natürlich! 😊</button>
+        <button id="valentineBtn" class="btn" onclick="showPage(10)">Ja, natürlich! 😊</button>
         <button class="btn" onclick="showPage(5)">Vielleicht 🤔</button>
     </div>
 
@@ -109,14 +109,6 @@
         function showPage(pageNumber) {
             const currentPage = document.querySelector('.container:not(.hidden)');
             
-            // Starte das Audio, wenn Seite 10 angezeigt wird, ansonsten stoppe es.
-            if (pageNumber === 10) {
-                valentineAudio.play();
-            } else {
-                valentineAudio.pause();
-                valentineAudio.currentTime = 0;
-            }
-            
             currentPage.classList.add('fade-out');
     
             currentPage.addEventListener('animationend', function () {
@@ -127,6 +119,11 @@
                 newPage.classList.remove('hidden');
             }, { once: true });
         }
+
+        document.getElementById("valentineBtn").addEventListener("click", function () {
+        valentineAudio.play();
+});
+
     </script>
     
     <!-- Script für animierte Emojis -->
