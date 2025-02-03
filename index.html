@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="backgroundMusic" src="pictures/yippie.mp3" loop muted></audio>
+    <audio id="backgroundMusic" src="pictures/yippie.mp3" loop></audio>
 
     <div class="container" id="page1">
         <h1>Hallo, mein kleiner Schatz 💖</h1>
@@ -147,18 +147,6 @@
                 setTimeout(() => {
                     heart.remove();
                 }, 5000); 
-
-                setTimeout(() => {
-                const newPage = document.getElementById('page' + pageNumber);
-                newPage.classList.remove('hidden');
-                newPage.classList.add('fadeIn');
-
-                // Entmute Audio auf page10
-                if (pageNumber === 10) {
-                    audio.muted = false;
-                    audio.play().catch(error => console.log("Autoplay-Blockierung:", error));
-                }
-            }, 500);
             }
         
             function createBouquet() {
