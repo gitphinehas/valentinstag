@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willst du mein Valentinsschatz sein?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="backgroundMusic" src="pictures/yippie.mp3" loop muted></audio>
+
     <div class="container" id="page1">
         <h1>Hallo, mein kleiner Schatz 💖</h1>
         <p>Ich hab mir so lange den Kopf zerbrochen, wie ich dich das fragen soll.
@@ -145,6 +147,18 @@
                 setTimeout(() => {
                     heart.remove();
                 }, 5000); 
+
+                setTimeout(() => {
+                const newPage = document.getElementById('page' + pageNumber);
+                newPage.classList.remove('hidden');
+                newPage.classList.add('fadeIn');
+
+                // Entmute Audio auf page10
+                if (pageNumber === 10) {
+                    audio.muted = false;
+                    audio.play().catch(error => console.log("Autoplay-Blockierung:", error));
+                }
+            }, 500);
             }
         
             function createBouquet() {
