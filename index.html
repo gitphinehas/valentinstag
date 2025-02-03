@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="backgroundMusic" src="pictures/yippie.mp3" loop></audio>
-
     <div class="container" id="page1">
         <h1>Hallo, mein kleiner Schatz 💖</h1>
         <p>Ich hab mir so lange den Kopf zerbrochen, wie ich dich das fragen soll.
@@ -99,10 +97,11 @@
     
     <!-- Audio-Element initialisieren -->
     <script>
-        // Audio-Element global definieren
-        const valentineAudio = new Audio('/pictures/yippie.mp3');
+        // Audio-Objekt global definieren
+        const valentineAudio = new Audio('pictures/yippie.mp3'); // Achte darauf, dass der Pfad korrekt ist
         valentineAudio.loop = true;
     </script>
+
     
     <!-- Script für Seitenwechsel und Audio-Steuerung -->
     <script>
@@ -110,21 +109,25 @@
             const currentPage = document.querySelector('.container:not(.hidden)');
             
             currentPage.classList.add('fade-out');
-    
+
             currentPage.addEventListener('animationend', function () {
                 currentPage.classList.add('hidden');
                 currentPage.classList.remove('fade-out');
-    
+
                 const newPage = document.getElementById('page' + pageNumber);
                 newPage.classList.remove('hidden');
+
+                // Starte das Audio nur, wenn es zur letzten Seite geht
+                if (pageNumber === 10) {
+                    valentineAudio.play().catch(error => console.error("Autoplay blockiert:", error));
+                } else {
+                    valentineAudio.pause();
+                    valentineAudio.currentTime = 0;
+                }
             }, { once: true });
         }
-
-        document.getElementById("valentineBtn").addEventListener("click", function () {
-        valentineAudio.play();
-});
-
     </script>
+
     
     <!-- Script für animierte Emojis -->
     <script>
